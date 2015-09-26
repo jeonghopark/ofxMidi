@@ -34,6 +34,10 @@ ofxMidiMessage::ofxMidiMessage(const ofxMidiMessage& from) {
 	deltatime = from.deltatime;
 	portNum = from.portNum;
 	portName = from.portName;
+    
+    //
+    byteOne = from.byteOne;
+    byteTwo = from.byteTwo;
 
 	bytes.clear();
 	for(unsigned int i = 0; i < from.bytes.size(); ++i)
@@ -52,6 +56,10 @@ ofxMidiMessage& ofxMidiMessage::operator=(const ofxMidiMessage& from) {
 	deltatime = from.deltatime;
 	portNum = from.portNum;
 	portName = from.portName;
+    
+    //
+    byteOne = from.byteOne;
+    byteTwo = from.byteTwo;
 	
 	bytes.clear();
 	for(unsigned int i = 0; i < from.bytes.size(); ++i)

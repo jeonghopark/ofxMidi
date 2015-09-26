@@ -13,6 +13,7 @@
 		63D0FD8734D5760B8080C901 /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABDEF0ACF05BF28F5C74E008 /* RtMidi.cpp */; };
 		63F9FE1D90234FA6DE6F509E /* ofxMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E238CCDE032640E0FEBFAD82 /* ofxMidi.cpp */; };
 		83D9F930112E0944444124EE /* ofxMidiOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F77E5C73A62E2E77C78EC6 /* ofxMidiOut.cpp */; };
+		A8A245B51BB7407300916ED1 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A245B41BB7407300916ED1 /* CoreMIDI.framework */; };
 		BCC8D420CBA9217E437D2D76 /* ofxRtMidiIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F634AA6CA2E3C60F3B87B59A /* ofxRtMidiIn.cpp */; };
 		C6FE64F74F1EA1D98C8F9847 /* ofxMidiMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0E7EDA67EDF213FC0E83D17 /* ofxMidiMessage.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
@@ -37,18 +38,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		E4C2427710CC5ABF004149E2 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		04F77E5C73A62E2E77C78EC6 /* ofxMidiOut.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxMidiOut.cpp; path = ../../../addons/ofxMidi/src/ofxMidiOut.cpp; sourceTree = SOURCE_ROOT; };
 		05F6CF127D4A621113D4A62F /* ofxMidi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMidi.h; path = ../../../addons/ofxMidi/src/ofxMidi.h; sourceTree = SOURCE_ROOT; };
@@ -58,9 +47,11 @@
 		470CF04F1D4D1B38D5AA1797 /* ofxRtMidiOut.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxRtMidiOut.h; path = ../../../addons/ofxMidi/src/desktop/ofxRtMidiOut.h; sourceTree = SOURCE_ROOT; };
 		712B183BC00EBFFB1EEA5AB8 /* ofxRtMidiOut.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxRtMidiOut.cpp; path = ../../../addons/ofxMidi/src/desktop/ofxRtMidiOut.cpp; sourceTree = SOURCE_ROOT; };
 		81436E53CC4A77E326F659C3 /* ofxMidiOut.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMidiOut.h; path = ../../../addons/ofxMidi/src/ofxMidiOut.h; sourceTree = SOURCE_ROOT; };
+		81AC32CCCB56FAABA3E1BDE0 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = /System/Library/Frameworks/CoreMIDI.framework; sourceTree = "<group>"; };
 		938214A2795AA8FED29086DB /* ofxMidiConstants.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMidiConstants.h; path = ../../../addons/ofxMidi/src/ofxMidiConstants.h; sourceTree = SOURCE_ROOT; };
 		94B3C3C21F92F9310CA90986 /* ofxBaseMidi.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseMidi.cpp; path = ../../../addons/ofxMidi/src/ofxBaseMidi.cpp; sourceTree = SOURCE_ROOT; };
 		A8793707281FD436C34316A5 /* RtMidi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = RtMidi.h; path = ../../../addons/ofxMidi/libs/rtmidi/RtMidi.h; sourceTree = SOURCE_ROOT; };
+		A8A245B41BB7407300916ED1 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		ABDEF0ACF05BF28F5C74E008 /* RtMidi.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = RtMidi.cpp; path = ../../../addons/ofxMidi/libs/rtmidi/RtMidi.cpp; sourceTree = SOURCE_ROOT; };
 		B76FA489151DBAF1616DF378 /* ofxMidiIn.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMidiIn.h; path = ../../../addons/ofxMidi/src/ofxMidiIn.h; sourceTree = SOURCE_ROOT; };
 		BD0E7AC8BE205034D5B377A6 /* ofxMidiMessage.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMidiMessage.h; path = ../../../addons/ofxMidi/src/ofxMidiMessage.h; sourceTree = SOURCE_ROOT; };
@@ -68,7 +59,7 @@
 		E16BB73D19DD0713FDCC7986 /* ofxMidiTypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMidiTypes.h; path = ../../../addons/ofxMidi/src/ofxMidiTypes.h; sourceTree = SOURCE_ROOT; };
 		E238CCDE032640E0FEBFAD82 /* ofxMidi.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxMidi.cpp; path = ../../../addons/ofxMidi/src/ofxMidi.cpp; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
-		E4B69B5B0A3A1756003C02F2 /* exampleInputDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exampleInputDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69B5B0A3A1756003C02F2 /* exampleInput_TimeCodeDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exampleInput_TimeCodeDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
@@ -83,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A245B51BB7407300916ED1 /* CoreMIDI.framework in Frameworks */,
 				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,8 +87,17 @@
 			children = (
 				9CBF51184BE294FD9D73043F /* src */,
 				5A08CCDC8D19E7162DE57128 /* libs */,
+				36D7EC7EF50E326EAC88A0AD /* frameworks */,
 			);
 			name = ofxMidi;
+			sourceTree = "<group>";
+		};
+		36D7EC7EF50E326EAC88A0AD /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81AC32CCCB56FAABA3E1BDE0 /* CoreMIDI.framework */,
+			);
+			name = frameworks;
 			sourceTree = "<group>";
 		};
 		5A08CCDC8D19E7162DE57128 /* libs */ = {
@@ -179,7 +180,8 @@
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				6948EE371B920CB800B5AC1A /* local_addons */,
-				E4B69B5B0A3A1756003C02F2 /* exampleInputDebug.app */,
+				A8A245B41BB7407300916ED1 /* CoreMIDI.framework */,
+				E4B69B5B0A3A1756003C02F2 /* exampleInput_TimeCodeDebug.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,23 +207,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4B69B5A0A3A1756003C02F2 /* exampleInput */ = {
+		E4B69B5A0A3A1756003C02F2 /* exampleInput_TimeCode */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "exampleInput" */;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "exampleInput_TimeCode" */;
 			buildPhases = (
 				E4B69B580A3A1756003C02F2 /* Sources */,
 				E4B69B590A3A1756003C02F2 /* Frameworks */,
 				E4B6FFFD0C3F9AB9008CF71C /* ShellScript */,
-				E4C2427710CC5ABF004149E2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
 			);
-			name = exampleInput;
+			name = exampleInput_TimeCode;
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* exampleInputDebug.app */;
+			productReference = E4B69B5B0A3A1756003C02F2 /* exampleInput_TimeCodeDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -232,7 +233,7 @@
 			attributes = {
 				LastUpgradeCheck = 0600;
 			};
-			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "exampleInput" */;
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "exampleInput_TimeCode" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -253,7 +254,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				E4B69B5A0A3A1756003C02F2 /* exampleInput */,
+				E4B69B5A0A3A1756003C02F2 /* exampleInput_TimeCode */,
 			);
 		};
 /* End PBXProject section */
@@ -464,7 +465,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "exampleInput" */ = {
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "exampleInput_TimeCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B4E0A3A1720003C02F2 /* Debug */,
@@ -473,7 +474,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "exampleInput" */ = {
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "exampleInput_TimeCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B600A3A1757003C02F2 /* Debug */,

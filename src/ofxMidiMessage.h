@@ -91,6 +91,13 @@ public:
 	/// get a midi status byte as a string
 	/// ie "Note On", "Note Off", "Control Change", etc
 	static string getStatusString(MidiStatus status);
+    
+    
+    //
+    int     byteOne;
+    int     byteTwo;
+    double  timestamp;
+
 };
 
 typedef ofEvent<ofxMidiMessage> ofxMidiEvent;
