@@ -89,6 +89,7 @@ void ofApp::exit() {
 	// clean up
 	midiIn.closePort();
 	midiIn.removeListener(this);
+
 }
 
 //--------------------------------------------------------------
@@ -96,6 +97,7 @@ void ofApp::newMidiMessage(ofxMidiMessage& msg) {
 
 	// make a copy of the latest message
 	midiMessage = msg;
+
 }
 
 //--------------------------------------------------------------
