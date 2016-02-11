@@ -46,16 +46,16 @@ void ofApp::draw() {
 	ofSetColor(0);
 	stringstream text;
 	text << "connected to port " << midiOut.getPort() 
-		 << " \"" << midiOut.getName() << "\"" << endl
-		 << "is virtual?: " << midiOut.isVirtual() << endl << endl
-		 << "sending to channel " << channel << endl << endl
-		 << "current program: " << currentPgm << endl << endl
-		 << "note: " << note << endl
-		 << "velocity: " << velocity << endl
-		 << "pan: " << pan << endl
-		 << "bend: " << bend << endl
-		 << "touch: " << touch << endl
-		 << "polytouch: " << polytouch;
+	     << " \"" << midiOut.getName() << "\"" << endl
+	     << "is virtual?: " << midiOut.isVirtual() << endl << endl
+	     << "sending to channel " << channel << endl << endl
+	     << "current program: " << currentPgm << endl << endl
+	     << "note: " << note << endl
+	     << "velocity: " << velocity << endl
+	     << "pan: " << pan << endl
+	     << "bend: " << bend << endl
+	     << "touch: " << touch << endl
+	     << "polytouch: " << polytouch;
 	ofDrawBitmapString(text.str(), 20, 20);
 }
 
@@ -77,6 +77,10 @@ void ofApp::keyPressed(int key) {
 		note = ofMap(key, 48, 122, 0, 127);
 		velocity = 64;
 		midiOut.sendNoteOn(channel, note,  velocity);
+		
+		// print out both the midi note and the frequency
+		ofLogNotice() << "note: " << note
+		              << " freq: " << ofxMidi::mtof(note) << " Hz";
 	}
 	
 	if(key == 'l') {
