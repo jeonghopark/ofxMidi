@@ -14,7 +14,7 @@ BSD Simplified License.
 For information on usage and redistribution, and for a DISCLAIMER OF ALL
 WARRANTIES, see the file, "LICENSE.txt," in this distribution.
 
-See Documentation on [Github](https://github.com/danomatika/ofxMidi) and the [OpenFrameworks Forum post](http://forum.openframeworks.cc/index.php/topic,2435.0.html).
+See Documentation on [Github](https://github.com/danomatika/ofxMidi) and the [OpenFrameworks Forum post](https://forum.openframeworks.cc/t/ofxmidi-updates/2435).
 
 OpenFrameworks is a cross platform open source toolkit for creative coding in C++.
 
@@ -42,15 +42,17 @@ To get a copy of the repository you can download the source from [http://github.
 
 The addon should sit in `openFrameworks/addons/ofxMidi/`.
 
-#### Which version to use?
+### Which version to use?
 
-If you are using a stable version (007, ...) of OpenFrameworks then you want to use a git tag of ofxMidi for that version. You can select the tag in the Github "Current Branch" menu or clone and check it out using git.
+The master branch of ofxMidi will work with the current stable version of OpenFrameworks and can be considered *relatively* stable.
 
-For example, the following commands will clone ofxMidi and switch to the OF 007 tagged version:
+Previous versions are tagged using [Semantic Versioning](http://semver.org) with the updates to newer versions of OpenFrameworks and MIDI libraries noted in the changelog, CHANGES.txt. You can select the tag in the Github "Current Branch" menu or clone and check it out using git.
+
+If you want to use ofxMidi with a previous version of OpenFrameworks, checkout the corresponding version tag after cloning:
 
     git clone git://github.com/danomatika/ofxMidi.git
-    cd ofxPd
-    git checkout 007
+    cd ofxMidi
+    git checkout 1.0.5
 
 Midi Routing
 ------------
