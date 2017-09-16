@@ -18,8 +18,9 @@ ofxMidiMessage::ofxMidiMessage() {
 // -----------------------------------------------------------------------------
 ofxMidiMessage::ofxMidiMessage(vector<unsigned char>* rawBytes) {
 	clear();
-	for(unsigned int i = 0; i < rawBytes->size(); ++i)
+	for(unsigned int i = 0; i < rawBytes->size(); ++i) {
 		bytes.push_back(rawBytes->at(i));
+	}
 }
 
 // -----------------------------------------------------------------------------
@@ -40,8 +41,9 @@ ofxMidiMessage::ofxMidiMessage(const ofxMidiMessage& from) {
     byteTwo = from.byteTwo;
 
 	bytes.clear();
-	for(unsigned int i = 0; i < from.bytes.size(); ++i)
+	for(unsigned int i = 0; i < from.bytes.size(); ++i) {
 		bytes.push_back(from.bytes[i]);
+	}
 }
 
 // -----------------------------------------------------------------------------
@@ -62,8 +64,9 @@ ofxMidiMessage& ofxMidiMessage::operator=(const ofxMidiMessage& from) {
     byteTwo = from.byteTwo;
 	
 	bytes.clear();
-	for(unsigned int i = 0; i < from.bytes.size(); ++i)
+	for(unsigned int i = 0; i < from.bytes.size(); ++i) {
 		bytes.push_back(from.bytes[i]);
+	}
 	return *this;
 }
 
