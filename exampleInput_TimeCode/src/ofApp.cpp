@@ -21,7 +21,7 @@
 void ofApp::setup() {
 	ofSetVerticalSync(true);
 	ofBackground(255, 255, 255);
-	ofSetLogLevel(OF_LOG_VERBOSE);
+//    ofSetLogLevel(OF_LOG_VERBOSE);
 	
 	// print input ports to console
 	midiIn.listPorts(); // via instance
@@ -88,8 +88,8 @@ void ofApp::draw() {
     
     // bar Index
     ofDrawBitmapString(num32thNotes % 4 + 1, 20, 260);
-
-
+    ofDrawBitmapString(tempoqNotes, 20, 290);
+    
 }
 
 //--------------------------------------------------------------
