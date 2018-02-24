@@ -11,6 +11,8 @@
 #pragma once
 
 #include "ofxBaseMidi.h"
+#include "ofTypes.h"
+
 
 // choose the midi backend
 #ifdef TARGET_OF_IPHONE

@@ -12,6 +12,9 @@
 
 #include "RtMidi.h"
 #include "../ofxBaseMidi.h"
+#include "ofLog.h"
+#include "ofTypes.h"
+
 
 class ofxRtMidiOut : public ofxBaseMidiOut {
 

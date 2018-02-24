@@ -9,6 +9,7 @@
  *
  */
 #include "ofxBaseMidi.h"
+#include "ofLog.h"
 
 // MIDI IN
 
