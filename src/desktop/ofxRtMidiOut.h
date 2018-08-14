@@ -21,13 +21,13 @@ class ofxRtMidiOut : public ofxBaseMidiOut {
 public:
 
 	/// set the output client name (optional)
-	ofxRtMidiOut(const std::string name);
+	ofxRtMidiOut(const std::string name, ofxMidiApi api=MIDI_API_DEFAULT);
 	virtual ~ofxRtMidiOut();
 
-	static void listPorts();
-	static std::vector<std::string>& getPortList();
-	static int getNumPorts();
-	static std::string getPortName(unsigned int portNumber);
+	void listOutPorts();
+	std::vector<std::string> getOutPortList();
+	int getNumOutPorts();
+	std::string getOutPortName(unsigned int portNumber);
 
 	bool openPort(unsigned int portNumber);
 	bool openPort(std::string deviceName);
@@ -36,8 +36,7 @@ public:
 	
 private:
 	
-	void sendMessage();
+	void sendMessage(std::vector<unsigned char> &message);
 
 	RtMidiOut midiOut;
-	static ofPtr<RtMidiOut> s_midiOut; //< for static calls (a little kludgey, I know)
 };

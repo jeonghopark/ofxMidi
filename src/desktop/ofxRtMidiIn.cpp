@@ -10,11 +10,11 @@
  */
 #include "ofxRtMidiIn.h"
 
-ofPtr<RtMidiIn> ofxRtMidiIn::s_midiIn;
+#include "ofLog.h"
 
 // -----------------------------------------------------------------------------
-ofxRtMidiIn::ofxRtMidiIn(const std::string name) :
-	ofxBaseMidiIn(name), midiIn(RtMidi::UNSPECIFIED, name) {
+ofxRtMidiIn::ofxRtMidiIn(const std::string name, ofxMidiApi api) :
+	ofxBaseMidiIn(name, api), midiIn((RtMidi::Api)api, name) {
 }
 
 // -----------------------------------------------------------------------------
@@ -23,44 +23,32 @@ ofxRtMidiIn::~ofxRtMidiIn() {
 }
 
 // -----------------------------------------------------------------------------
-void ofxRtMidiIn::listPorts() {
-	if(s_midiIn == NULL) {
-		s_midiIn = ofPtr<RtMidiIn>(new RtMidiIn(RtMidi::UNSPECIFIED, "ofxMidi Client"));
-	}
-	ofLogNotice("ofxMidiIn") << s_midiIn->getPortCount() << " ports available";
-	for(unsigned int i = 0; i < s_midiIn->getPortCount(); ++i){
-		ofLogNotice("ofxMidiIn") <<  i << ": " << s_midiIn->getPortName(i);
+void ofxRtMidiIn::listInPorts() {
+	ofLogNotice("ofxMidiIn") << midiIn.getPortCount() << " ports available";
+	for(unsigned int i = 0; i < midiIn.getPortCount(); ++i){
+		ofLogNotice("ofxMidiIn") <<  i << ": " << midiIn.getPortName(i);
 	}
 }
 
 // -----------------------------------------------------------------------------
-std::vector<std::string>& ofxRtMidiIn::getPortList() {
-	if(s_midiIn == NULL) {
-		s_midiIn = ofPtr<RtMidiIn>(new RtMidiIn(RtMidi::UNSPECIFIED, "ofxMidi Client"));
-	}
-	portList.clear();
-	for(unsigned int i=0; i < s_midiIn->getPortCount(); ++i) {
-		portList.push_back(s_midiIn->getPortName(i));
+std::vector<std::string> ofxRtMidiIn::getInPortList() {
+	std::vector<std::string> portList;
+	for(unsigned int i = 0; i < midiIn.getPortCount(); ++i) {
+		portList.push_back(midiIn.getPortName(i));
 	}
 	return portList;
 }
 
 // -----------------------------------------------------------------------------
-int ofxRtMidiIn::getNumPorts() {
-	if(s_midiIn == NULL) {
-		s_midiIn = ofPtr<RtMidiIn>(new RtMidiIn(RtMidi::UNSPECIFIED, "ofxMidi Client"));
-	}
-	return s_midiIn->getPortCount();
+int ofxRtMidiIn::getNumInPorts() {
+	return midiIn.getPortCount();
 }
 
 // -----------------------------------------------------------------------------
-std::string ofxRtMidiIn::getPortName(unsigned int portNumber) {
-	if(s_midiIn == NULL) {
-		s_midiIn = ofPtr<RtMidiIn>(new RtMidiIn(RtMidi::UNSPECIFIED, "ofxMidi Client"));
-	}
-	// handle rtmidi exceptions
+std::string ofxRtMidiIn::getInPortName(unsigned int portNumber) {
+	// handle RtMidi exceptions
 	try {
-		return s_midiIn->getPortName(portNumber);
+		return midiIn.getPortName(portNumber);
 	}
 	catch(RtMidiError& err) {
 		ofLogError("ofxMidiIn") << "couldn't get name for port " << portNumber << ": " << err.what();
@@ -70,7 +58,7 @@ std::string ofxRtMidiIn::getPortName(unsigned int portNumber) {
 
 // -----------------------------------------------------------------------------
 bool ofxRtMidiIn::openPort(unsigned int portNumber) {	
-	// handle rtmidi exceptions
+	// handle RtMidi exceptions
 	try {
 		closePort();
 		midiIn.setCallback(&_midiMessageCallback, this);
@@ -111,7 +99,7 @@ bool ofxRtMidiIn::openPort(std::string deviceName) {
 
 // -----------------------------------------------------------------------------
 bool ofxRtMidiIn::openVirtualPort(std::string portName) {
-	// handle rtmidi exceptions
+	// handle RtMidi exceptions
 	try {
 		closePort();
 		midiIn.setCallback(&_midiMessageCallback, this);
