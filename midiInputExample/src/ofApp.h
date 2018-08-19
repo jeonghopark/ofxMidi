@@ -34,5 +34,5 @@ public:
 	
 	ofxMidiIn midiIn;
 	std::vector<ofxMidiMessage> midiMessages;
-	std::size_t maxMessages = 10; //< max number of messages to keep track of
+	std::size_t maxMessages = 1; //< max number of messages to keep track of
 };

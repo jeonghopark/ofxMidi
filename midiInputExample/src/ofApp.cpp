@@ -20,7 +20,7 @@ void ofApp::setup() {
 	midiIn.listInPorts();
 	
 	// open port by number (you may need to change this)
-	midiIn.openPort(1);
+	midiIn.openPort(0);
 	//midiIn.openPort("IAC Pure Data In");	// by name
 	//midiIn.openVirtualPort("ofxMidiIn Input"); // open a virtual port
 	
@@ -53,7 +53,7 @@ void ofApp::draw() {
 		// this doesn't print all the data from every status type
 		// but you should get the general idea
 		stringstream text;
-		text << ofxMidiMessage::getStatusString(message.status);
+		// text << ofxMidiMessage::getStatusString(message.status);
 		while(text.str().length() < 16) { // pad status width
 			text << " ";
 		}
@@ -64,7 +64,7 @@ void ofApp::draw() {
 			if(message.status == MIDI_CONTROL_CHANGE) {
 				text << "\tctl: " << message.control;
 				ofDrawRectangle(x + ofGetWidth()*0.2, y + 12,
-					ofMap(message.control, 0, 127, 0, ofGetWidth()*0.2), 10);
+					ofMap(message.value, 0, 127, 0, ofGetWidth()*0.2), 10);
 			}
 			else if(message.status == MIDI_PITCH_BEND) {
 				text << "\tval: " << message.value;
@@ -83,7 +83,7 @@ void ofApp::draw() {
 			text << " "; // pad for delta print
 		}
 
-		text << "delta: " << message.deltatime;
+		// text << "delta: " << message.deltatime;
 		ofSetColor(0);
 		ofDrawBitmapString(text.str(), x, y);
 		text.str(""); // clear

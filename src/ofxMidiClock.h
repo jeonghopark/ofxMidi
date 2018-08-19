@@ -74,7 +74,7 @@ public:
 	/// calculate tempo bpm from a give MIDI clock length in ms
 	static double msToBpm(double ms);
 
-protected:
+// protected:
 
 	double length = 20.833; //< averaged tick length in ms, default 120 bpm
 	unsigned long ticks = 0.0; //< current song pos in ticks (6 ticks = 1 beat)
